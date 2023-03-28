@@ -1,0 +1,146 @@
+@font-face {
+    font-family:'Poppins';
+    font-weight: 400;
+    src: url('fonts/Poppins-Regular.woff2') format('woff2'),
+         url('fonts/Poppins-Regular.woff') format('woff');
+}
+@font-face {
+    font-family:'Poppins';
+    font-weight: 600;
+    src: url('fonts/Poppins-SemiBold.woff2') format('woff2'),
+         url('fonts/Poppins-SemiBold.woff') format('woff');
+}
+@font-face {
+    font-family:'Open Sans' ;
+    src: url('fonts/OpenSans-Regular.woff2') format('woff2'),
+         url('fonts/OpenSans-Regular.woff') format('woff');
+}
+
+.attribution {
+    display: none;
+}
+
+html {
+    background-color: hsl(257, 40%, 49%);
+    background-image: url('images/bg-desktop.svg');
+    background-size: cover; /* Set the size of the background image to cover the entire element */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center center; /* Center the background image horizontally and vertically */
+}
+
+main {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+}
+
+.logo {
+    position: absolute;
+    top:40px;
+    left: 100px;
+}
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-areas: 'mockups desc';
+}
+.mockups {
+    grid-area: mockups;
+}
+.text {
+    grid-area: desc;
+    margin:2.5rem;
+}
+.title {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1.25rem;
+    width: 40ch;
+    color: white;
+}
+.desc {
+    font-family: Open Sans;
+    width: 53ch;
+    word-spacing: 3px;
+    font-size: 1.125rem;
+    color: white;
+}
+
+button {
+    border: none;
+    background-color: white;
+    color: hsl(257, 40%, 49%);
+    font-family: Open Sans;
+    font-size: 1.1rem;
+    width: 12rem;
+    height: 3rem;
+    border-radius: 100vh;
+
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.488);
+}
+button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: hsl(300, 69%, 71%);
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(3,40px);
+    grid-column-gap: 25px;
+
+    position: absolute;
+    right: 40px;
+    bottom:40px ;
+}
+.icon {
+    border: 2px white solid;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.icon:hover {
+    cursor: pointer;
+}
+svg {
+    margin: 4.75px;
+}
+
+/* Styles for phone screens */
+@media only screen and (max-width: 767px) {
+    html {
+        background-image: url('images/bg-mobile.svg');
+        background-size: cover; /* Set the size of the background image to cover the entire element */
+        background-repeat: no-repeat; /* Prevent the background image from repeating */
+        background-position: center center; /* Center the background image horizontally and vertically */
+    }
+    .card {
+        display: grid;
+        grid-template-rows: 0.25fr 1fr 1fr;
+        grid-template-areas:
+        'empty' 
+        'mockups' 
+        'desc';
+        place-items: center;
+    }
+    .mockups svg {
+        transform: scale(0.8);
+    }
+    .text {
+        text-align: center;
+    }
+
+    button {
+        margin-right: 25px;
+    }
+    .icons {
+        display: grid;
+        grid-template-columns: repeat(3,40px);
+        grid-column-gap: 25px;
+    
+        position: absolute;
+        right: 38%;
+        bottom:-50% ;
+
+    }
+}  
